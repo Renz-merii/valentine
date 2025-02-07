@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine?</title>
+    <style>
+        body {
+            background-color: #FFB6C1; /* Light pink background */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #FF1493; /* Deep pink color */
+        }
+        button {
+            background-color: #FF69B4; /* Hot pink button */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border: none;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #FF1493;
+        }
+        #gif {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Will you be my Valentine?</h1>
+    
+    <button id="yesButton">Yes</button>
+    <button id="noButton">No</button>
+
+    <div id="gif">
+        <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExbW5lenZyZHI5OXM2eW95b3pmMG40cWVrMDhtNjVuM3A4dGNxa2g2dSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/VM1fcpu2bKs1e2Kdbj/giphy.gif" alt="Cat GIF" width="300">
+    </div>
+
+    <script>
+        // Messages for the "No" button
+        const messages = [
+            "Are you sure?",
+            "Really sure??",
+            "Are you positive?",
+            "Pookie please...",
+            "Just think about it!",
+            "If you say no, I will be really sad...",
+            "I will be very sad...",
+            "I will be very very very sad...",
+            "Ok fine, I will stop asking...",
+            "Just kidding, say yes please! ❤️"
+        ];
+
+        let messageIndex = 0;
+
+        // "No" button logic
+        document.getElementById('noButton').addEventListener('click', function() {
+            this.textContent = messages[messageIndex];
+            messageIndex = (messageIndex + 1) % messages.length; // Cycle through messages
+
+            // Increase the size of the "Yes" button text
+            document.getElementById('yesButton').style.fontSize = '24px';
+        });
+
+        // "Yes" button logic
+        document.getElementById('yesButton').addEventListener('click', function() {
+            alert("Yay! You said Yes!");
+        });
+    </script>
+
+</body>
+</html>
